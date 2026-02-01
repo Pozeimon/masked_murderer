@@ -1,0 +1,287 @@
+{
+  "caseId": "the_tear",
+  "title": "The Tear",
+  "victim": "Emil Soder",
+  "solution": {
+    "culprit": "Jonas (engineer)",
+    "method": "tampered charging dock discharge + conductive contact pad",
+    "motive": "cover up unauthorized module swap to prevent demo failure and avoid blame"
+  },
+  "culprits": [
+    "Jonas (engineer)",
+    "Rhea (lab tech)",
+    "Mara (producer)"
+  ],
+  "methods": [
+    "tampered charging dock discharge + conductive contact pad",
+    "blunt force with prototype casing",
+    "overloaded coolant vent"
+  ],
+  "motives": [
+    "cover up unauthorized module swap to prevent demo failure and avoid blame",
+    "financial pressure from gambling debt",
+    "retaliation over credit for the demo"
+  ],
+  "essentials": ["C05", "C07"],
+  "clusters": [
+    {
+      "id": "A",
+      "name": "Access & Logs",
+      "clueIds": ["C01", "C03", "C04", "C06"]
+    },
+    {
+      "id": "B",
+      "name": "Power & Dock",
+      "clueIds": ["C05", "C08", "C09", "C10"]
+    },
+    {
+      "id": "C",
+      "name": "Cover-Up",
+      "clueIds": ["C02", "C07", "C11", "C12"]
+    }
+  ],
+  "objects": [
+    {
+      "id": "obj_C01_lanyard",
+      "label": "Cut Lanyard",
+      "recipe": "Lanyard",
+      "mode": "Matter",
+      "localPosition": {"x": -0.25, "y": 0.02, "z": 0.25},
+      "localRotation": {"x": 0, "y": 25, "z": 0},
+      "localScale": {"x": 0.18, "y": 0.02, "z": 0.18},
+      "startsVisible": true
+    },
+    {
+      "id": "obj_C03_shadowlog",
+      "label": "Door Shadow Log",
+      "recipe": "ShadowLog",
+      "mode": "Matter",
+      "localPosition": {"x": 0.25, "y": 0.15, "z": 0.30},
+      "localRotation": {"x": 0, "y": -20, "z": 0},
+      "localScale": {"x": 0.20, "y": 0.18, "z": 0.02},
+      "startsVisible": true
+    },
+    {
+      "id": "obj_C04_badge",
+      "label": "Badge Token",
+      "recipe": "Badge",
+      "mode": "Matter",
+      "localPosition": {"x": -0.05, "y": 0.05, "z": 0.40},
+      "localRotation": {"x": 0, "y": 0, "z": 0},
+      "localScale": {"x": 0.08, "y": 0.08, "z": 0.02},
+      "startsVisible": false
+    },
+    {
+      "id": "obj_C06_note",
+      "label": "Hidden Note",
+      "recipe": "Note",
+      "mode": "Matter",
+      "localPosition": {"x": 0.35, "y": 0.12, "z": 0.10},
+      "localRotation": {"x": 0, "y": 10, "z": 0},
+      "localScale": {"x": 0.12, "y": 0.08, "z": 0.02},
+      "startsVisible": false
+    },
+    {
+      "id": "obj_C05_power",
+      "label": "Power Anomaly Spire",
+      "recipe": "PowerSpire",
+      "mode": "Matter",
+      "localPosition": {"x": 0.00, "y": 0.20, "z": 0.00},
+      "localRotation": {"x": 0, "y": 0, "z": 0},
+      "localScale": {"x": 0.10, "y": 0.20, "z": 0.10},
+      "startsVisible": true
+    },
+    {
+      "id": "obj_C08_bit",
+      "label": "Missing Triwing Bit",
+      "recipe": "Bit",
+      "mode": "Matter",
+      "localPosition": {"x": -0.35, "y": 0.05, "z": 0.00},
+      "localRotation": {"x": 0, "y": 0, "z": 0},
+      "localScale": {"x": 0.05, "y": 0.05, "z": 0.05},
+      "startsVisible": false
+    },
+    {
+      "id": "obj_C09_dock",
+      "label": "Dock Resealed",
+      "recipe": "Dock",
+      "mode": "Matter",
+      "localPosition": {"x": 0.20, "y": 0.05, "z": -0.20},
+      "localRotation": {"x": 0, "y": 0, "z": 0},
+      "localScale": {"x": 0.20, "y": 0.05, "z": 0.20},
+      "startsVisible": false
+    },
+    {
+      "id": "obj_C10_pad",
+      "label": "Conductive Pad Wrapper",
+      "recipe": "PadWrapper",
+      "mode": "Matter",
+      "localPosition": {"x": 0.00, "y": 0.05, "z": -0.35},
+      "localRotation": {"x": 0, "y": 15, "z": 0},
+      "localScale": {"x": 0.15, "y": 0.02, "z": 0.15},
+      "startsVisible": false
+    },
+    {
+      "id": "obj_C02_spill",
+      "label": "Staged Spill",
+      "recipe": "Spill",
+      "mode": "Matter",
+      "localPosition": {"x": -0.20, "y": 0.02, "z": -0.20},
+      "localRotation": {"x": 0, "y": 0, "z": 0},
+      "localScale": {"x": 0.20, "y": 0.01, "z": 0.20},
+      "startsVisible": true
+    },
+    {
+      "id": "obj_C07_bag",
+      "label": "Missing Module Bag",
+      "recipe": "AntistaticBag",
+      "mode": "Matter",
+      "localPosition": {"x": 0.35, "y": 0.08, "z": -0.25},
+      "localRotation": {"x": 0, "y": -15, "z": 0},
+      "localScale": {"x": 0.18, "y": 0.12, "z": 0.08},
+      "startsVisible": false
+    },
+    {
+      "id": "obj_C11_flow",
+      "label": "Movement Echo",
+      "recipe": "FlowTrace",
+      "mode": "Flow",
+      "localPosition": {"x": 0.00, "y": 0.00, "z": 0.30},
+      "localRotation": {"x": 0, "y": 0, "z": 0},
+      "localScale": {"x": 1.00, "y": 1.00, "z": 1.00},
+      "startsVisible": false
+    },
+    {
+      "id": "obj_C12_stash",
+      "label": "Wall Panel Stash",
+      "recipe": "WallStash",
+      "mode": "Void",
+      "localPosition": {"x": -0.35, "y": 0.15, "z": -0.05},
+      "localRotation": {"x": 0, "y": 30, "z": 0},
+      "localScale": {"x": 0.20, "y": 0.20, "z": 0.02},
+      "startsVisible": false
+    }
+  ],
+  "clues": [
+    {
+      "id": "C01",
+      "title": "Cut Lanyard",
+      "summary": "Security lanyard snapped cleanly, not torn by impact.",
+      "objectId": "obj_C01_lanyard",
+      "prerequisites": [],
+      "revealsObjectIds": ["obj_C04_badge"],
+      "clusterId": "A",
+      "required": true
+    },
+    {
+      "id": "C03",
+      "title": "Door Shadow Log: Two Windows",
+      "summary": "Entry log shows two narrow access windows that night.",
+      "objectId": "obj_C03_shadowlog",
+      "prerequisites": [],
+      "revealsObjectIds": ["obj_C06_note"],
+      "clusterId": "A",
+      "required": true
+    },
+    {
+      "id": "C04",
+      "title": "Badge Token Post-Incident",
+      "summary": "Badge token pings after the incident window closed.",
+      "objectId": "obj_C04_badge",
+      "prerequisites": ["C01"],
+      "revealsObjectIds": [],
+      "clusterId": "A",
+      "required": true
+    },
+    {
+      "id": "C06",
+      "title": "Hidden Note: Do Not Log",
+      "summary": "A note on shelf B warns: 'do not log swaps'.",
+      "objectId": "obj_C06_note",
+      "prerequisites": ["C03"],
+      "revealsObjectIds": [],
+      "clusterId": "A",
+      "required": true
+    },
+    {
+      "id": "C05",
+      "title": "Power Anomaly 20:47",
+      "summary": "A discharge spike precisely at 20:47.",
+      "objectId": "obj_C05_power",
+      "prerequisites": [],
+      "revealsObjectIds": ["obj_C08_bit"],
+      "clusterId": "B",
+      "required": true
+    },
+    {
+      "id": "C08",
+      "title": "Missing Triwing Bit",
+      "summary": "Tool roll is missing the triwing bit.",
+      "objectId": "obj_C08_bit",
+      "prerequisites": ["C05"],
+      "revealsObjectIds": ["obj_C09_dock"],
+      "clusterId": "B",
+      "required": true
+    },
+    {
+      "id": "C09",
+      "title": "Dock Opened & Resealed",
+      "summary": "Fasteners show fresh reseal marks.",
+      "objectId": "obj_C09_dock",
+      "prerequisites": ["C08"],
+      "revealsObjectIds": ["obj_C10_pad"],
+      "clusterId": "B",
+      "required": true
+    },
+    {
+      "id": "C10",
+      "title": "Conductive Pad Wrapper",
+      "summary": "Wrapper indicates a non-standard conductive pad.",
+      "objectId": "obj_C10_pad",
+      "prerequisites": ["C09"],
+      "revealsObjectIds": [],
+      "clusterId": "B",
+      "required": true
+    },
+    {
+      "id": "C02",
+      "title": "Staged Spill Order",
+      "summary": "Cleaning order was filed before the spill time.",
+      "objectId": "obj_C02_spill",
+      "prerequisites": [],
+      "revealsObjectIds": ["obj_C07_bag", "obj_C11_flow"],
+      "clusterId": "C",
+      "required": true
+    },
+    {
+      "id": "C07",
+      "title": "Antistatic Bag Missing Module",
+      "summary": "Bag seal broken; module missing inside.",
+      "objectId": "obj_C07_bag",
+      "prerequisites": ["C02"],
+      "revealsObjectIds": ["obj_C12_stash"],
+      "clusterId": "C",
+      "required": true
+    },
+    {
+      "id": "C11",
+      "title": "Movement: Two Passes",
+      "summary": "Flow trace shows two returns to the dock.",
+      "objectId": "obj_C11_flow",
+      "prerequisites": ["C02"],
+      "revealsObjectIds": [],
+      "clusterId": "C",
+      "required": false
+    },
+    {
+      "id": "C12",
+      "title": "Wall Panel Stash",
+      "summary": "Void outline reveals a hidden panel cache.",
+      "objectId": "obj_C12_stash",
+      "prerequisites": ["C07"],
+      "revealsObjectIds": [],
+      "clusterId": "C",
+      "required": false
+    }
+  ]
+}

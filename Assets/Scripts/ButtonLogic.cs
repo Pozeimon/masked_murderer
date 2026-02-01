@@ -14,21 +14,23 @@ public class ButtonLogic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        UIStartButton.onClick.AddListener(OnStartButtonClicked);
+        if (UIStartButton != null)
+        {
+            UIStartButton.onClick.AddListener(OnStartButtonClicked);
+        }
     }
 
     void OnStartButtonClicked()
     {
-        OnUIStartButtonClicked?.Invoke();
-        UIStartButton.gameObject.SetActive(false);
+        RaiseBeginInvestigation();
+        if (UIStartButton != null)
+        {
+            UIStartButton.gameObject.SetActive(false);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public static void RaiseBeginInvestigation()
     {
-        currentMask = StateMachine.GetComponent<StateMachineTracker>().currentMask;
-        Debug.Log(currentMask);
-        currentState = StateMachine.GetComponent<StateMachineTracker>().currentState;
-        Debug.Log(currentState);
+        OnUIStartButtonClicked?.Invoke();
     }
 }

@@ -1,0 +1,99 @@
+﻿Sample scenario: Death At the Game Jam
+
+
+Persons
+Murder victim
+* DEVELOPER Veronica Vinter (alias: “daVinci”)
+Players [masks] and suspects
+1. JANITOR Johnny Olsson
+2. TECHNICIAN Maryam Ali
+3. ORGANIZER Albert Johnson
+Non-player suspects (NPS’s)
+4. DESIGNER Zoe Carter
+5. INVESTOR Erik Lindström (aka the KILLER) Motive: Wanted to invest in a project but got played and cheated and ended up killing the person trying to steal his invested money. Murder weapon: first Zoe’s computer, then plastic bag for suffocation.
+
+
+Setting: Game introduction
+The player is placed directly in the scene. There is a dead body by a computer. The police have just been called. The only three people present besides the dead body [all represented by masks] are the organizer, the janitor and a technician who has arrived early at the workshop. It has already been established that the person is dead and the three people are waiting for the police. It looks as if the dead person just collapsed, maybe hit their head? The computer table is undisturbed, though. Perhaps the person has been beaten to death, but since there is no really visible head injury, there must be something else/something more. This information is given.
+
+
+Introductory text
+“Welcome to the scenario Murder at the Game Jam. You are currently seeing the world as the janitor Johnny Olsson. You can choose two other viewpoints by clicking on the masks: the organizer Albert Johnson and the technician Maryam Ali. You three have discovered a dead body: the developer Veronica Vinter. She appears to have been dead for a while (her body is cold) and you have called the police.”
+
+
+Clue list
+1. Dead body of developer Veronica (anchor). Cold. Seen by All.
+2. Waste paper basket without plastic bag and trash. Seen by the Janitor.
+3. Stains on a table, sloppily cleaned. Seen by the Janitor.
+4. A closed computer with a buckled lid belonging to the Designer. Seen by All.
+5. Same computer open, revealing the login name “daVinci”. First seen by the Technician, then by the Organizer.
+6. Security camera of the entrance. Seen by the Organizer.
+7. WC-door. Seen by all. If the Janitor uses it, it reveals the Investor hidden inside.
+8. Discord logs (accessed from different computers (?) for the Technician, the Organizer, and the investor Erik). The last computer is seen by All after Erik is revealed.
+
+
+Interaction list
+Clue cluster 1
+1. Dead body (All) “The body is cold. Veronica Vinter must have been dead for a while.”
+2. Waste paper basket (Janitor) “Strange, I haven’t removed that plastic bag?”
+3. Stains on table (Janitor) “<Sigh> Someone has wiped the table. Sloppy bastard.”
+4. Closed laptop with damaged lid
+   1. (Janitor) “Why is the lid broken on that computer?”
+   2. (Organizer) “Check this out, a computer with a broken lid. Maryam, can you check it?”
+   3. (Technician) “Nothing major, let me look at it.” => Opens lid
+5. Open laptop with damaged lid
+   1. (Technician) “Login name: daVinci? Who’s that?”
+   2. (Organizer) “It’s Zoe Ali’s computer! Where is she?”
+   3. (Janitor) “Login name: daVinci? Who’s that?”
+Synthesis text 1: “Veronica seems to have been hit on the head with Zoe Ali’s computer and then maybe suffocated with the missing garbage bag. The crime scene has been tampered with, but sloppily, indicating some panic. The computer belongs to the designer Albert Johnson.”
+
+
+Clue cluster 2
+6. Security camera (Organizer) “I have full access to the security footage. No edits since six, when the film was saved. It shows everybody leaving, I think. There goes Zoe Ali without her computer. But not Veronica. And only us three entering this morning. Was Veronica alone here during the night? Can we just show each other what conversations we have had with Veronica on Discord?”
+7. Organizer’s phone (Organizer) Reveals last Discord message from Veronica “I love the idea I shared with you! It will make tons of money. Don’t tell anyone - it is a secret!!!”
+8. Technician’s phone (Technician) Last Discord message from Veronica: “Stop stalking me! It really sucks. You have wasted so much of my time. Can you just leave me alone and stop pestering me, please? For the last time, I’m not interested in you!”
+9. WC (if accessed by the Janitor): “Erik [Investor - not shown]? Are you also here? What do you mean, you got scared when there was a body on the floor and locked yourself in? Show us your discord interaction with Veronica” => reveals Erik’s phone to All
+10. Investor's phone (available to All after Erik has been revealed). Last Discord message from Veronica: “Go shit yourself! Of course I won’t pay back your money until I make some money of my own. And no, my idea is mine alone!” 
+Synthesis text 2: “Only the three players were seen entering the venue on the security camera footage. Too many people exited to be checked quickly, but Veronica never left. Several people seem to have had odd interactions with Veronica the day before.”
+
+
+________________
+
+
+Game end
+
+
+Lineup of the suspects
+End text: “You have five suspects. Think about opportunity and motive for each.
+1. The janitor Johnny Olsson.
+2. The organizer Albert Johnson
+3. The technician Maryam Ali
+4. The investor Erik Lindström
+5. The graphic designer “daVinci” Zoe Carter”
+
+
+Text after right or wrong answer: “The investor Erik Lindström was the only one with both motive and opportunity to kill Veronica Vinter. He wanted to save his investment and stayed behind with Veronica while everyone else left to convince her. Erik confesses when pressured that he hit Veronica over the head with Zoe’s laptop in a fit of anger. She passed out. He was so angry that he grabbed a plastic garbage bag and put it over her head until she suffocated. He then flushed the bag down the toilet and tried to clean up coffee that was spilled when she fell across the table. Police investigations of the camera footage later confirm his story. Erik was the only one besides Veronica who never came out the evening of the murder. ”
+
+
+Solution at end:
+* The investor Erik Lindström is the murderer.
+   * He had motive as he was cheated of his investment by Veronica Vinter
+   * He had opportunity as he was there and thus had access to the murder weapon.
+* The organizer Albert is not the murderer
+   * He had motive, to steal a secret project
+   * He had some sort of opportunity as he could potentially wipe security footage, but the footage had not been tampered with.
+* The technician Maryam is not the murderer
+   * She had a motive, being Veronica Vinter’s stalker.
+   * She had no opportunity as she had left the premises
+* The designer Zoe is not the murderer
+   * She had no motive
+   * She had no opportunity, even though her computer was the murder weapon.
+* The janitor Johnny is not the murderer
+   * He had no motive as he had no interactions with Veronica
+   * He had sort of an opportunity as he has access through the back door.
+
+
+End goal of fully developed app.
+* The game is aimed to be a single- and multi-player AR whodunnit-game that can be played on your phone/phones in any room.
+* The aim is to supply many different murder mystery scenarios. This will provide a need for continuous add-on packages
+* The aim is to provide games of different difficulty, perhaps three levels.
