@@ -47,8 +47,10 @@ Temporary Items
 /[Uu]ser[Ss]ettings/
 
 # Ignore the simulation components
-/[Aa]ssets/UnityXRContent/Common/ReferenceShapes/*
-/[Aa]ssets/UnityXRContent/ARFoundation/SimulationEnvironments/*
+/[Aa]ssets/UnityXRContent/Common/ReferenceShapes*
+/[Aa]ssets/UnityXRContent/Common/ReferenceObjects*
+/[Aa]ssets/UnityXRContent/Common/ReferenceImages*
+/[Aa]ssets/UnityXRContent/ARFoundation/SimulationEnvironments*
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
