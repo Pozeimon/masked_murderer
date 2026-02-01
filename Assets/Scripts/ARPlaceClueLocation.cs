@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using UnityEngine.InputSystem;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         if(!raycastManager) return;
 
+        //int touchCount = InputSystem.EnhancedTouch.Touch.activeTouches.Count;
+        //int touchCount = Input.touchCount;
+        //touchPhase =  InputSystem.EnhancedTouch.Touch.activeTouches[i]
         if((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began
         || Input.GetMouseButtonDown(0)) && !isPlacing)
         {
@@ -26,6 +30,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
             {
                 // Mouse click
                 PlaceObject(Input.mousePosition);
+                //PlaceObject(Mouse.current.position.ReadValue());
             }
         }
     }
@@ -33,7 +38,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         var rayHits = new List<ARRaycastHit>();
         raycastManager.Raycast(touchPosition, rayHits, TrackableType.AllTypes);
-        if (rayHits.Count > 0)
+        if (rayHits.Count > 0 && rayHits.collider is ARPlane)
         {
             Vector3 hitPosePosition = rayHits[0].pose.position;
             Quaternion hitPoseRotation = rayHits[0].pose.rotation;
