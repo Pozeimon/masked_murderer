@@ -27,8 +27,6 @@ public class ButtonLogic : MonoBehaviour
     void Update()
     {
         currentMask = StateMachine.GetComponent<StateMachineTracker>().currentMask;
-        Debug.Log(currentMask);
         currentState = StateMachine.GetComponent<StateMachineTracker>().currentState;
-        Debug.Log(currentState);
     }
 }

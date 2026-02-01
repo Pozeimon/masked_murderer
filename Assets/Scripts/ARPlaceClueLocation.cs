@@ -18,25 +18,41 @@ public class ARPlaceClueLocation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(StateMachine.GetComponent<StateMachineTracker>().currentState != "Start") return;
         if(!raycastManager) return;
 
         //int touchCount = InputSystem.EnhancedTouch.Touch.activeTouches.Count;
         //int touchCount = Input.touchCount;
         //touchPhase =  InputSystem.EnhancedTouch.Touch.activeTouches[i]
         if((Input.touchCount > 0 && Input.GetTouch(0).phase == UnityEngine.TouchPhase.Began
-        || Input.GetMouseButtonDown(0)) && !isPlacing)
+        || Input.GetMouseButtonDown(0)))
         {
-            isPlacing = true;
-            if (Input.touchCount > 0)
+            if(StateMachine.GetComponent<StateMachineTracker>().currentState == "Start" && !isPlacing)
             {
-                // Touch
-                PlaceObject(Input.GetTouch(0).position);
-            } else
+                isPlacing = true;
+                if (Input.touchCount > 0)
+                {
+                    // Touch
+                    PlaceObject(Input.GetTouch(0).position);
+                } else
+                {
+                    // Mouse click
+                    PlaceObject(Input.mousePosition);
+                    //PlaceObject(Mouse.current.position.ReadValue());
+                }
+            }
+            if(StateMachine.GetComponent<StateMachineTracker>().currentState == "Ongoing")
             {
-                // Mouse click
-                PlaceObject(Input.mousePosition);
-                //PlaceObject(Mouse.current.position.ReadValue());
+                Debug.Log("Raycast");
+                if (Input.touchCount > 0)
+                {
+                    // Touch
+                    GetObject(Input.GetTouch(0).position);
+                } else
+                {
+                    // Mouse click
+                    GetObject(Input.mousePosition);
+                    //GetObject(Mouse.current.position.ReadValue());
+                }
             }
         }
     }
@@ -58,6 +74,25 @@ public class ARPlaceClueLocation : MonoBehaviour
         }
 
         StartCoroutine(SetIsPlacingFalseWithDelay());
+    }
+
+    void GetObject(Vector2 touchPosition)
+    {
+        Debug.Log("GetObject called");
+        var rayHits = new List<ARRaycastHit>();
+        raycastManager.Raycast(touchPosition, rayHits, TrackableType.AllTypes);
+        if (rayHits.Count > 0)
+        {
+            //Debug.DrawRay(touchPosition, touchPosition-rayHits[0].pose.position, Color.red);
+            Debug.Log("Hit: " + rayHits[0].trackable.gameObject.name);
+            if (rayHits[0].trackable.gameObject.CompareTag("Clue"))
+            {
+                string clue_id = rayHits[0].trackable.gameObject.name; //GetComponent<id>;
+                Debug.Log("Clue id pressed" + clue_id);
+                // This gets the id of the selected clue
+                // TODO: Add call to canvas_handler
+            }
+        }
     }
     IEnumerator SetIsPlacingFalseWithDelay()
     {

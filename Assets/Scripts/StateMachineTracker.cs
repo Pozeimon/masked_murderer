@@ -51,10 +51,8 @@ public class StateMachineTracker : MonoBehaviour
 
         for (int index = 0; index < amountOfClues; index ++)
         {
-            currentMask = "Blue" + "A";
             Instantiate(prefabs[index], ARPlaceClueLocation.GetComponent<ARPlaceClueLocation>().ClueLocations[randomList[index]],
                                 ARPlaceClueLocation.GetComponent<ARPlaceClueLocation>().ClueRotations[randomList[index]]);
-            currentMask = "Blue" + "A";
         }
     }
 
