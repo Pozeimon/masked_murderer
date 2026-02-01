@@ -38,7 +38,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         var rayHits = new List<ARRaycastHit>();
         raycastManager.Raycast(touchPosition, rayHits, TrackableType.AllTypes);
-        if (rayHits.Count > 0 && rayHits.collider is ARPlane)
+        if (rayHits.Count > 0)
         {
             Vector3 hitPosePosition = rayHits[0].pose.position;
             Quaternion hitPoseRotation = rayHits[0].pose.rotation;
